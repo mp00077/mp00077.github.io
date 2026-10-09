@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <title>Docházka Qt - uživatelská nápověda (administrátor)</title>
+  <style>
+    body { font-family:"Segoe UI", Arial, sans-serif; color:#1f2933; line-height:1.55; margin:28px; }
+    h1, h2, h3 { color:#0b4f8a; }
+    h1 { font-size:28px; margin-bottom:0; }
+    h2 { margin-top:28px; }
+    .meta { color:#52606d; margin-top:6px; margin-bottom:22px; }
+    .box { background:#f8fafc; border:1px solid #d9e2ec; padding:14px 16px; border-radius:8px; }
+    .note { background:#fff8db; border:1px solid #f0d98c; padding:12px 14px; border-radius:8px; }
+    img { width:100%; max-width:1120px; border:1px solid #d9e2ec; border-radius:8px; margin:10px 0 6px; background:#fff; }
+    .caption { font-size:14px; color:#334e68; margin-bottom:18px; }
+    table { border-collapse:collapse; width:100%; margin:8px 0 16px; }
+    th, td { border:1px solid #d9e2ec; padding:8px; text-align:left; vertical-align:top; }
+    th { background:#f0f4f8; }
+    code { background:#eef2f7; padding:1px 4px; border-radius:4px; }
+  </style>
+</head>
+<body>
+  <h1>Docházka Qt - nápověda pro roli administrátor</h1>
+  <p class="meta">Projekt: Docházka | Aktualizováno: 22. 5. 2026 | Role: administrátor (<code>admin</code>)</p>
+
+  <div class="box">
+    <strong>Co může administrátor dělat v Qt verzi</strong>
+    <ul>
+      <li>Vidí a spravuje všechny zaměstnance, role, oprávnění a vazby vedoucích.</li>
+      <li>Má menu <em>Administrace</em>, <em>Vedoucí</em>, <em>Zobrazit</em>, <em>Export</em> a <em>Nápověda</em>.</li>
+      <li>Může nastavovat typy celého dne, pevnou dobu, AD integraci, databázi a vzhled aplikace.</li>
+      <li>Časy se při ruční editaci zadávají v 15minutovém kroku; pevná doba ovlivňuje odpočet odchodů v pracovní době.</li>
+    </ul>
+  </div>
+
+  <h2>1. Hlavní okno administrátora</h2>
+  <img src="screenshots/qt_guide_admin_main_2026_real.png" alt="Qt hlavní obrazovka administrátora" />
+  <p class="caption"><strong>Screenshot 1:</strong> Administrátor má dostupnou kompletní správu aplikace i vedoucí přehledy. V hlavním okně může vybrat libovolného zaměstnance.</p>
+
+  <h2>2. Správa uživatelů</h2>
+  <img src="screenshots/qt_guide_user_management_2026_real.png" alt="Qt správa uživatelů" />
+  <p class="caption"><strong>Screenshot 2:</strong> Okno slouží k založení, úpravě a deaktivaci zaměstnance. Deaktivace ponechá historii v databázi a nabídne archiv docházky.</p>
+
+  <h2>3. Hromadné úpravy uživatelů</h2>
+  <img src="screenshots/qt_guide_bulk_employee_edit_2026_real.png" alt="Qt hromadné úpravy uživatelů" />
+  <p class="caption"><strong>Screenshot 3:</strong> Hromadné úpravy mění roli nebo vedoucího pro více uživatelů najednou.</p>
+  <ul>
+    <li>Sloupec <em>Vybrat</em> používá checkbox stejně jako hromadný export XLS.</li>
+    <li>Hlavičky <em>Uživatel</em>, <em>Role</em> a <em>Vedoucí</em> lze řadit; řaditelné sloupce mají značku.</li>
+    <li>Hodnota <em>beze změny</em> danou vlastnost nepřepisuje.</li>
+  </ul>
+
+  <h2>4. Role a oprávnění</h2>
+  <img src="screenshots/qt_guide_roles_permissions_2026_real.png" alt="Qt role a oprávnění" />
+  <p class="caption"><strong>Screenshot 4:</strong> Role určují, jaká menu a data uživatel vidí. Systémová role <em>admin</em> je chráněná proti omezení.</p>
+  <table>
+    <thead><tr><th>Typ oprávnění</th><th>Význam</th></tr></thead>
+    <tbody>
+      <tr><td>Ano / Ne</td><td>Zapíná nebo vypíná konkrétní funkci, například hromadný export nebo databázový import/export.</td></tr>
+      <tr><td>Vlastní</td><td>Uživatel vidí nebo spravuje pouze sebe.</td></tr>
+      <tr><td>Podřízení</td><td>Uživatel vidí sebe a přímé podřízené.</td></tr>
+      <tr><td>Podřízení včetně dalších úrovní</td><td>Uživatel vidí sebe, přímé podřízené i celý navazující strom.</td></tr>
+      <tr><td>Všichni</td><td>Uživatel vidí všechny zaměstnance.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>5. Typ celého dne</h2>
+  <img src="screenshots/qt_guide_day_status_types_2026_real.png" alt="Qt typ celého dne" />
+  <p class="caption"><strong>Screenshot 5:</strong> Okno je sjednocené se stylem <em>Pevná doba</em>. Vybereš existující typ, upravíš název a hodnotu <em>Započítat</em> ve formátu <code>HH:MM</code>.</p>
+
+  <h2>6. Pevná doba</h2>
+  <img src="screenshots/qt_guide_fixed_workday_2026_real.png" alt="Qt pevná doba" />
+  <p class="caption"><strong>Screenshot 6:</strong> Pevná doba určuje interval, ve kterém se odchod v pracovní době neodečítá.</p>
+
+  <h2>7. Nastavení AD a import z AD</h2>
+  <img src="screenshots/qt_guide_admin_settings_2026_real.png" alt="Qt nastavení AD" />
+  <p class="caption"><strong>Screenshot 7:</strong> Nastavení AD ukládá OU cestu a může kontrolovat OS účty proti Active Directory.</p>
+
+  <img src="screenshots/qt_guide_ad_import_2026_real.png" alt="Qt import z AD" />
+  <p class="caption"><strong>Screenshot 8:</strong> Import z AD načte členy skupiny, předvybere nové uživatele a nastaví jim vybraného vedoucího.</p>
+
+  <h2>8. Databáze</h2>
+  <img src="screenshots/qt_guide_db_transfer_2026_real.png" alt="Qt databáze" />
+  <p class="caption"><strong>Screenshot 9:</strong> Okno <em>Databáze</em> slouží k výběru databázového souboru, exportu dat do JSON a importu JSON zpět do databáze.</p>
+
+  <p class="note"><strong>Doporučení:</strong> Před importem databáze nebo větší změnou rolí nejdřív proveď export do JSON.</p>
+
+  <h2>9. Hierarchie</h2>
+  <img src="screenshots/qt_guide_hierarchy_2026_real.png" alt="Qt hierarchie" />
+  <p class="caption"><strong>Screenshot 10:</strong> Hierarchie ukazuje strom vedoucích a podřízených. Lze ji exportovat do RTF.</p>
+
+  <h2>10. Vedoucí přehledy dostupné administrátorovi</h2>
+  <img src="screenshots/qt_guide_team_list_2026_real.png" alt="Qt seznam dnešní docházky" />
+  <p class="caption"><strong>Screenshot 11:</strong> Seznam dnešní docházky lze řadit podle zaměstnance, příchodu a odchodu.</p>
+
+  <img src="screenshots/qt_guide_employee_saldo_2026_real.png" alt="Qt zaměstnanci saldo" />
+  <p class="caption"><strong>Screenshot 12:</strong> Přehled salda lze řadit podle zaměstnance nebo hodnoty salda.</p>
+
+  <img src="screenshots/qt_guide_bulk_export_2026_real.png" alt="Qt hromadný export XLS" />
+  <p class="caption"><strong>Screenshot 13:</strong> Hromadný export XLS umí samostatné soubory i jeden workbook s listy podle zaměstnanců.</p>
+
+  <h2>11. Zobrazení, období a statistika</h2>
+  <img src="screenshots/qt_guide_attendance_detail_2026_real.png" alt="Qt detail docházky" />
+  <p class="caption"><strong>Screenshot 14:</strong> Detail docházky je čtecí přehled období s odchody v pracovní době.</p>
+
+  <img src="screenshots/qt_guide_cycle_selector_2026_real.png" alt="Qt výběr období" />
+  <p class="caption"><strong>Screenshot 15:</strong> Výběr období přepíná hlavní okno na jiný čtyřtýdenní cyklus.</p>
+
+  <img src="screenshots/qt_guide_statistics_2026_real.png" alt="Qt statistika" />
+  <p class="caption"><strong>Screenshot 16:</strong> Statistika ukazuje roční souhrn typů celého dne pro vybraného zaměstnance.</p>
+
+  <h2>12. Nastavení vzhledu</h2>
+  <img src="screenshots/qt_guide_app_settings_2026_real.png" alt="Qt nastavení vzhledu" />
+  <p class="caption"><strong>Screenshot 17:</strong> V menu <em>Administrace - Nastavení vzhledu</em> lze vybrat motiv, upravit barvy, uložit vlastní preset nebo vlastní preset smazat. Výchozí zelený motiv zůstává v kódu, další presety jsou v <code>docs/config/qt_theme_presets.json</code>.</p>
+</body>
+</html>

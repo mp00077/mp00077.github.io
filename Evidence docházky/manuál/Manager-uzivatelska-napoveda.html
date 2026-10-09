@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <title>Docházka - uživatelská nápověda (vedoucí)</title>
+  <style>
+    body { font-family: "Segoe UI", Arial, sans-serif; color:#1f2933; line-height:1.55; margin:28px; }
+    h1, h2, h3 { color:#0b4f8a; }
+    h1 { font-size:28px; margin-bottom:0; }
+    h2 { margin-top:28px; }
+    .meta { color:#52606d; margin-top:6px; margin-bottom:22px; }
+    .box { background:#f8fafc; border:1px solid #d9e2ec; padding:14px 16px; border-radius:8px; }
+    .note { background:#fff8db; border:1px solid #f0d98c; padding:12px 14px; border-radius:8px; }
+    img { width:100%; max-width:1120px; border:1px solid #d9e2ec; border-radius:8px; margin:10px 0 6px; background:#fff; }
+    .caption { font-size:14px; color:#334e68; margin-bottom:18px; }
+    table { border-collapse:collapse; width:100%; margin:8px 0 16px; }
+    th, td { border:1px solid #d9e2ec; padding:8px; text-align:left; vertical-align:top; }
+    th { background:#f0f4f8; }
+    code { background:#eef2f7; padding:1px 4px; border-radius:4px; }
+  </style>
+</head>
+<body>
+  <h1>Docházka - uživatelská nápověda pro roli vedoucí</h1>
+  <p class="meta">Projekt: Docházka | Aktualizováno: 22. 5. 2026 | Role: vedoucí (<code>manager</code>)</p>
+
+  <div class="box">
+    <strong>Co může vedoucí dělat</strong>
+    <ul>
+      <li>Vidí sebe a zaměstnance podle nastaveného rozsahu oprávnění.</li>
+      <li>Rozsah <em>Podřízení</em> znamená přímé podřízené; rozsah <em>Podřízení včetně dalších úrovní</em> zahrne celý strom.</li>
+      <li>Má menu <em>Vedoucí</em> se seznamem dnešní docházky, saldem zaměstnanců a hromadným XLS exportem.</li>
+      <li>V hlavním okně může přepnout zaměstnance a upravit docházku v povoleném rozsahu.</li>
+      <li>Ruční časy se zadávají po 15 minutách a odchody v pracovní době respektují pevnou dobu.</li>
+    </ul>
+  </div>
+
+  <h2>1. Hlavní okno vedoucího</h2>
+  <img src="screenshots/guide_manager_main_2026_real.png" alt="Hlavní obrazovka vedoucího" />
+  <p class="caption"><strong>Screenshot 1:</strong> Vedoucí má v hlavním okně výběr zaměstnance. Po přepnutí se načte jeho aktuální nebo vybrané období, editor dne a souhrn salda.</p>
+
+  <ul>
+    <li>Výběr zaměstnance je omezen oprávněním role.</li>
+    <li>Tabulka období funguje stejně jako u zaměstnance: výběr řádku načte den do editoru, dvojklik umožní rychlou editaci časů.</li>
+    <li>Menu <em>Export</em> exportuje období právě vybraného zaměstnance.</li>
+  </ul>
+
+  <h2>2. Seznam dnešní docházky</h2>
+  <img src="screenshots/guide_team_list_2026_real.png" alt="Seznam dnešní docházky" />
+  <p class="caption"><strong>Screenshot 2:</strong> Okno <em>Vedoucí - Seznam dnešní docházky</em> ukazuje dnešní příchod, oběd, odchod, přerušení pracovní doby a saldo cyklu.</p>
+
+  <table>
+    <thead><tr><th>Sloupec</th><th>Význam</th><th>Řazení</th></tr></thead>
+    <tbody>
+      <tr><td>Zaměstnanec</td><td>Příjmení a jméno zaměstnance.</td><td>Kliknutím na hlavičku lze řadit abecedně.</td></tr>
+      <tr><td>Vedoucí</td><td>Vedoucí zaměstnance ve formátu příjmení a jméno.</td><td>Jen zobrazení.</td></tr>
+      <tr><td>Příchod</td><td>Dnešní příchod nebo typ celého dne.</td><td>Kliknutím lze řadit podle času; prázdné hodnoty jsou na konci.</td></tr>
+      <tr><td>Odchod</td><td>Dnešní odchod.</td><td>Kliknutím lze řadit podle času; prázdné hodnoty jsou na konci.</td></tr>
+      <tr><td>Přerušení prac. doby</td><td>Odchody v pracovní době včetně důvodu.</td><td>Jen zobrazení.</td></tr>
+      <tr><td>Saldo cyklus</td><td>Aktuální saldo zaměstnance v cyklu.</td><td>Jen zobrazení.</td></tr>
+    </tbody>
+  </table>
+
+  <p class="note">Řaditelné sloupce mají v hlavičce značku. Aktivní řazení ukazuje směr šipkou nahoru nebo dolů.</p>
+
+  <h2>3. Zaměstnanci - saldo</h2>
+  <img src="screenshots/guide_employee_saldo_2026_real.png" alt="Zaměstnanci saldo" />
+  <p class="caption"><strong>Screenshot 3:</strong> Okno ukazuje saldo aktuálního cyklu pro viditelné zaměstnance.</p>
+
+  <ul>
+    <li>Sloupec <em>Zaměstnanec</em> lze řadit podle příjmení.</li>
+    <li>Sloupec <em>Saldo aktuální cyklus</em> lze řadit podle hodnoty salda.</li>
+    <li>Záporné saldo znamená méně odpracovaného času vůči očekávané době za vyplněné pracovní dny.</li>
+  </ul>
+
+  <h2>4. Hromadný export XLS</h2>
+  <img src="screenshots/guide_bulk_export_2026_real.png" alt="Hromadný export XLS" />
+  <p class="caption"><strong>Screenshot 4:</strong> Hromadný export umožňuje vybrat zaměstnance, období a způsob výstupu.</p>
+
+  <ul>
+    <li><em>Samostatné soubory</em> vytvoří pro každého zaměstnance vlastní XLS/XLSX.</li>
+    <li><em>Jeden soubor, listy podle uživatelů</em> vytvoří jeden workbook s více listy.</li>
+    <li><em>Kontrola nevyplněných dnů</em> před exportem upozorní na zaměstnance s chybějící docházkou.</li>
+    <li>Export běží na pozadí; během zpracování se zobrazí busy okno.</li>
+  </ul>
+
+  <h2>5. Detail docházky, období a statistika</h2>
+  <img src="screenshots/guide_attendance_detail_2026_real.png" alt="Detail docházky" />
+  <p class="caption"><strong>Screenshot 5:</strong> Detail docházky je čtecí přehled období pro vybraného zaměstnance.</p>
+
+  <img src="screenshots/guide_cycle_selector_2026_real.png" alt="Výběr období" />
+  <p class="caption"><strong>Screenshot 6:</strong> Výběr období přepíná hlavní okno na jiný čtyřtýdenní cyklus.</p>
+
+  <img src="screenshots/guide_statistics_2026_real.png" alt="Statistika" />
+  <p class="caption"><strong>Screenshot 7:</strong> Statistika ukazuje roční čerpání typů celého dne pro aktuálně vybraného zaměstnance.</p>
+
+  <h2>6. Odchod v pracovní době</h2>
+  <img src="screenshots/guide_workday_exits_2026_real.png" alt="Odchody v pracovní době" />
+  <p class="caption"><strong>Screenshot 8:</strong> Vedoucí může v povoleném rozsahu doplnit více odchodů v pracovní době pro jeden den.</p>
+
+  <ul>
+    <li>Časy musí být v pořadí <em>od</em> menší než <em>do</em>.</li>
+    <li>Intervaly se nesmí překrývat.</li>
+    <li>Část intervalu spadající do pevné doby se neodečte, část mimo pevnou dobu ano.</li>
+  </ul>
+</body>
+</html>

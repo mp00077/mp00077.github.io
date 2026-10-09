@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <title>Docházka Qt - uživatelská nápověda (zaměstnanec)</title>
+  <style>
+    body { font-family:"Segoe UI", Arial, sans-serif; color:#1f2933; line-height:1.55; margin:28px; }
+    h1, h2, h3 { color:#0b4f8a; }
+    h1 { font-size:28px; margin-bottom:0; }
+    h2 { margin-top:28px; }
+    .meta { color:#52606d; margin-top:6px; margin-bottom:22px; }
+    .box { background:#f8fafc; border:1px solid #d9e2ec; padding:14px 16px; border-radius:8px; }
+    .note { background:#fff8db; border:1px solid #f0d98c; padding:12px 14px; border-radius:8px; }
+    img { width:100%; max-width:1120px; border:1px solid #d9e2ec; border-radius:8px; margin:10px 0 6px; background:#fff; }
+    .caption { font-size:14px; color:#334e68; margin-bottom:18px; }
+    table { border-collapse:collapse; width:100%; margin:8px 0 16px; }
+    th, td { border:1px solid #d9e2ec; padding:8px; text-align:left; vertical-align:top; }
+    th { background:#f0f4f8; }
+    code { background:#eef2f7; padding:1px 4px; border-radius:4px; }
+  </style>
+</head>
+<body>
+  <h1>Docházka Qt - nápověda pro roli zaměstnanec</h1>
+  <p class="meta">Projekt: Docházka | Aktualizováno: 22. 5. 2026 | Role: zaměstnanec (<code>employee</code>)</p>
+
+  <div class="box">
+    <strong>Co může zaměstnanec dělat v Qt verzi</strong>
+    <ul>
+      <li>Vidí a upravuje pouze vlastní docházku.</li>
+      <li>Nemá menu <em>Administrace</em> ani <em>Vedoucí</em>.</li>
+      <li>Používá menu <em>Zobrazit</em>, <em>Export</em> a <em>Nápověda</em>.</li>
+      <li>Exportuje vlastní aktuální nebo vybrané období do XLS/XLSX.</li>
+      <li>Ruční časy zadává ve formátu <strong>HH:MM</strong>; aplikace povoluje kroky po 15 minutách.</li>
+    </ul>
+  </div>
+
+  <h2>1. Hlavní okno</h2>
+  <img src="screenshots/qt_guide_employee_main_2026_real.png" alt="Qt hlavní obrazovka zaměstnance" />
+  <p class="caption"><strong>Screenshot 1:</strong> Hlavní okno ukazuje aktuální čtyřtýdenní období, normu, odpracovaný čas a saldo. Tabulka obsahuje dny období a editor vybraného dne.</p>
+
+  <h3>Práce s tabulkou období</h3>
+  <ul>
+    <li>Kliknutím na řádek vybereš den, který se načte do spodního editoru.</li>
+    <li>Dvojklikem ve sloupcích <em>Příchod</em>, <em>Oběd od</em> a <em>Odchod</em> lze rychle upravit čas přímo v tabulce.</li>
+    <li>Po uložení se přepočítá <em>Odpracováno</em>, <em>Saldo</em> a upozornění na nevyplněné dny.</li>
+  </ul>
+
+  <h3>Editace dne</h3>
+  <ul>
+    <li>Vyplň <em>Příchod</em>, <em>Oběd od</em> a <em>Odchod</em>, například <code>08:15</code>, <code>12:15</code>, <code>16:15</code>.</li>
+    <li>Pokud vybereš <em>Celý den</em>, nesmí být současně vyplněné časy příchodu, oběda ani odchodu.</li>
+    <li><em>Vymazat den</em> odstraní časy, typ celého dne i odchody v pracovní době pro vybraný den.</li>
+  </ul>
+
+  <div class="note">
+    <strong>Pevná doba:</strong> Odchod v pracovní době se neodečítá v části, která spadá do nastavené pevné doby. Část mimo pevnou dobu se odečte od odpracovaného času.
+  </div>
+
+  <h2>2. Odchody v pracovní době</h2>
+  <img src="screenshots/qt_guide_workday_exits_2026_real.png" alt="Qt odchody v pracovní době" />
+  <p class="caption"><strong>Screenshot 2:</strong> Dialog umožňuje zadat více odchodů v pracovní době pro jeden den. Každý řádek má čas <em>Od</em>, <em>Do</em> a důvod.</p>
+  <ul>
+    <li>Časy musí být v pořadí od menší než do.</li>
+    <li>Intervaly se nesmí překrývat.</li>
+    <li>Časy se zadávají ve 15minutovém kroku.</li>
+  </ul>
+
+  <h2>3. Detail docházky</h2>
+  <img src="screenshots/qt_guide_attendance_detail_2026_real.png" alt="Qt detail docházky" />
+  <p class="caption"><strong>Screenshot 3:</strong> Okno <em>Zobrazit - Detail docházky</em> je čtecí přehled období. Obsahuje příchod, oběd, odchod, odchody v pracovní době a vypočtené hodiny.</p>
+
+  <h2>4. Výběr období</h2>
+  <img src="screenshots/qt_guide_cycle_selector_2026_real.png" alt="Qt výběr období" />
+  <p class="caption"><strong>Screenshot 4:</strong> Dialog <em>Zobrazit - Vybrat období</em> přepne hlavní okno na jiný čtyřtýdenní cyklus.</p>
+
+  <h2>5. Statistika</h2>
+  <img src="screenshots/qt_guide_statistics_2026_real.png" alt="Qt statistika" />
+  <p class="caption"><strong>Screenshot 5:</strong> Statistiky ukazují počty dnů podle typu celého dne za vybraný rok. Dvojklik na položku otevře seznam konkrétních dnů.</p>
+
+  <h2>6. Oprávnění k editaci</h2>
+  <table>
+    <thead><tr><th>Den</th><th>Lze upravit?</th><th>Poznámka</th></tr></thead>
+    <tbody>
+      <tr><td>Dnes</td><td>Ano</td><td>Běžný zápis nebo ruční doplnění.</td></tr>
+      <tr><td>Předchozí pracovní den</td><td>Ano</td><td>V pondělí je předchozí pracovní den pátek.</td></tr>
+      <tr><td>Starší dny</td><td>Ne</td><td>Povolí je jen role s širším právem editace.</td></tr>
+      <tr><td>Budoucí dny</td><td>Ne</td><td>Povolí je jen role s oprávněním editovat budoucí dny.</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>
